@@ -13,3 +13,18 @@
 {
   margin: 0;
 }
+
+.ProtocolsListView
+{
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
+.ProtocolsListView .ProtocolListTile
+{
+  color: #282c34;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
