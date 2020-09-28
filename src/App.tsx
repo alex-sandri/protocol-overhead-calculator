@@ -1,28 +1,33 @@
 import React from 'react';
 import './App.css';
 
+interface Protocol
+{
+  name: string,
+}
+
 class App extends React.Component
 {
-  state = {
-    protocol: "",
-  }
-
-  private showProtocol(protocol: string) {
-    this.setState({ protocol })
-
-    switch (protocol)
+  private protocols: Protocol[] = [
     {
-      case "Ethernet":
-        break;
-      case "IPv4":
-        break;
-      case "IPv6":
-        break;
-      case "TCP":
-        break;
-      case "UDP":
-        break;
-    }
+      name: "Ethernet",
+    },
+    {
+      name: "IPv4",
+    },
+    {
+      name: "IPv6",
+    },
+    {
+      name: "TCP",
+    },
+    {
+      name: "UDP",
+    },
+  ]
+
+  state = {
+    protocol: {} as Protocol,
   }
 
   render() {
@@ -33,11 +38,11 @@ class App extends React.Component
         </header>
         <ul className="ProtocolsListView">
           {
-            [ "Ethernet", "IPv4", "IPv6", "TCP", "UDP" ].map((protocol) =>
-              (<button key={protocol} onClick={() => this.showProtocol(protocol)} className="ProtocolListTile">{protocol}</button>))
+            this.protocols.map((protocol) =>
+              (<button key={protocol.name} onClick={() => this.setState({ protocol })} className="ProtocolListTile">{protocol.name}</button>))
           }
         </ul>
-        <div>{this.state.protocol}</div>
+        <div>{this.state.protocol.name}</div>
       </div>
     );
   }
