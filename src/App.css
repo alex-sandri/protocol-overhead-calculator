@@ -19,6 +19,8 @@
   list-style: none;
   display: flex;
   gap: 5px;
+  padding: 0 5px;
+  overflow: auto;
 }
 
 .ProtocolsListView .ProtocolListTile
@@ -27,4 +29,17 @@
   background-color: white;
   border-radius: 5px;
   padding: 10px;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 0;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.ProtocolsListView .ProtocolListTile:focus,
+.ProtocolsListView .ProtocolListTile:hover
+{
+  color: white;
+  background-color: #282c34;
+  outline: none;
 }
