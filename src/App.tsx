@@ -6,7 +6,7 @@ interface Protocol
   name: string,
   fields: {
     name: string,
-    size: number,
+    size: number, // In bytes
   }[],
 }
 
@@ -23,12 +23,27 @@ class App extends React.Component
         { name: "EtherType", size: 2, },
         { name: "Data", size: 7, },
         { name: "Frame Check Sequence", size: 7, },
-      ]
+      ],
     },
-    /*
     {
       name: "IPv4",
+      fields: [
+        { name: "Version", size: 0.5, },
+        { name: "Internet Header Length", size: 0.5, },
+        { name: "Differentiated Services Code Point", size: 0.75, },
+        { name: "Explicit Congestion Notification", size: 0.25, },
+        { name: "Total Length", size: 2, },
+        { name: "Identification", size: 2, },
+        { name: "Flag", size: 0.375, },
+        { name: "Fragment Offset", size: 1.625, },
+        { name: "Time-to-Live", size: 1, },
+        { name: "Protocol", size: 1, },
+        { name: "Header Checksum", size: 2, },
+        { name: "Source IPv4 Address", size: 4, },
+        { name: "Destination IPv4 Address", size: 4, },
+      ],
     },
+    /*
     {
       name: "IPv6",
     },
