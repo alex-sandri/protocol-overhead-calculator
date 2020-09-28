@@ -54,17 +54,19 @@ class App extends React.Component
         <ul className="ProtocolsListView">
           {
             this.protocols.map((protocol) =>
-              (<button key={protocol.name} onClick={() => this.setState({ protocol })} className="ProtocolListTile">{protocol.name}</button>))
+              <button key={protocol.name} onClick={() => this.setState({ protocol })} className="ProtocolListTile">{protocol.name}</button>
+            )
           }
         </ul>
         <div className="Protocol">
           <h1 className="ProtocolTitle">{this.state.protocol.name}</h1>
           {
             this.state.protocol.fields?.map((field) =>
-              (<div key={field.name} className="ProtocolField">
+              <div key={field.name} className="ProtocolField">
                 <p className="ProtocolFieldName">{field.name}</p>
                 <p className="ProtocolFieldSize">{field.size}</p>
-              </div>))
+              </div>
+            )
           }
         </div>
       </div>
