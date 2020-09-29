@@ -8,7 +8,12 @@ interface Protocol
     name: string,
     size: number, // In bytes
   }[],
+  options?: {
+    showInGrid?: boolean,
+  },
 }
+
+const PROTOCOL_EOL = { name: "EOL", size: 0, };
 
 class App extends React.Component
 {
@@ -32,16 +37,21 @@ class App extends React.Component
         { name: "Internet Header Length", size: 0.5, },
         { name: "Differentiated Services Code Point", size: 0.75, },
         { name: "Explicit Congestion Notification", size: 0.25, },
+        PROTOCOL_EOL,
         { name: "Total Length", size: 2, },
         { name: "Identification", size: 2, },
         { name: "Flag", size: 0.375, },
         { name: "Fragment Offset", size: 1.625, },
+        PROTOCOL_EOL,
         { name: "Time-to-Live", size: 1, },
         { name: "Protocol", size: 1, },
         { name: "Header Checksum", size: 2, },
+        PROTOCOL_EOL,
         { name: "Source IPv4 Address", size: 4, },
+        PROTOCOL_EOL,
         { name: "Destination IPv4 Address", size: 4, },
       ],
+      options: { showInGrid: true, },
     },
     /*
     {
@@ -76,7 +86,8 @@ class App extends React.Component
         <div className="Protocol">
           <h1 className="ProtocolTitle">{this.state.protocol.name}</h1>
           {
-            this.state.protocol.fields?.map((field) =>
+            this.state.protocol.fields?.map((field, index) =>
+              field === PROTOCOL_EOL ? <br key={`EOL-${index}`}></br> :
               <div key={field.name} className="ProtocolField">
                 <p className="ProtocolFieldName">{field.name}</p>
                 <p className="ProtocolFieldSize">{field.size}</p>
