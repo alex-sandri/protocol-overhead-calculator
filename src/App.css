@@ -32,3 +32,23 @@
   background-color: #282c34;
   outline: none;
 }
+
+.ProtocolField
+{
+  border: 2px solid white;
+  display: inline-block;
+}
+
+.ProtocolField .ProtocolFieldName
+{
+  margin: 0;
+  background-color: seagreen;
+  padding: 5px;
+}
+
+.ProtocolField .ProtocolFieldSize
+{
+  margin: 0;
+  background-color: steelblue;
+  padding: 5px;
+}
