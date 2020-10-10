@@ -41,6 +41,8 @@
 
 .ProtocolField .ProtocolFieldName
 {
+  display: grid;
+  place-items: center;
   margin: 0;
   background-color: seagreen;
   padding: 5px;
@@ -49,6 +51,8 @@
 
 .ProtocolField .ProtocolFieldSize
 {
+  display: grid;
+  place-items: center;
   margin: 0;
   background-color: steelblue;
   padding: 5px;
