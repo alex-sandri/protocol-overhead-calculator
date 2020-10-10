@@ -53,10 +53,24 @@ class App extends React.Component
       ],
       options: { showInGrid: true, },
     },
-    /*
     {
       name: "IPv6",
+      fields: [
+        { name: "Version", size: 0.5, },
+        { name: "Traffic Class", size: 1, },
+        { name: "Flow Label", size: 2.5, },
+        PROTOCOL_EOL,
+        { name: "Payload Length", size: 2, },
+        { name: "Next Header", size: 1, },
+        { name: "Hop Limit", size: 1, },
+        PROTOCOL_EOL,
+        { name: "Source IPv6 Address", size: 16, },
+        PROTOCOL_EOL,
+        { name: "Destination IPv6 Address", size: 16, },
+      ],
+      options: { showInGrid: true, },
     },
+    /*
     {
       name: "TCP",
     },
