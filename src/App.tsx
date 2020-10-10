@@ -117,7 +117,7 @@ class App extends React.Component
                       }
                 }>
                   <p className="ProtocolFieldName">{field.name}</p>
-                  <p className="ProtocolFieldSize">{field.size}</p>
+                  <p className="ProtocolFieldSize">{field.size * 8} Bit ({field.size} Byte)</p>
                 </div>
               )
             }
