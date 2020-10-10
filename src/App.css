@@ -44,6 +44,7 @@
   margin: 0;
   background-color: seagreen;
   padding: 5px;
+  height: 50%;
 }
 
 .ProtocolField .ProtocolFieldSize
@@ -51,4 +52,5 @@
   margin: 0;
   background-color: steelblue;
   padding: 5px;
+  height: 50%;
 }

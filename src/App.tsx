@@ -15,6 +15,8 @@ interface Protocol
 
 const PROTOCOL_EOL = { name: "EOL", size: 0, };
 
+const ROW_HEIGHT = 75;
+
 class App extends React.Component
 {
   private protocols: Protocol[] = [
@@ -108,8 +110,12 @@ class App extends React.Component
                     ? {
                         width: `${field.size * 100 / 4}%`,
                         maxWidth: "100%",
+                        height: `${ROW_HEIGHT}px`,
                       }
-                    : {}}>
+                    : {
+                        height: `${ROW_HEIGHT}px`,
+                      }
+                }>
                   <p className="ProtocolFieldName">{field.name}</p>
                   <p className="ProtocolFieldSize">{field.size}</p>
                 </div>
