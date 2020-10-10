@@ -110,7 +110,7 @@ class App extends React.Component
                     ? {
                         width: `${field.size * 100 / 4}%`,
                         maxWidth: "100%",
-                        height: `${ROW_HEIGHT}px`,
+                        height: `${ROW_HEIGHT * Math.max(1, Math.trunc(field.size / 4))}px`,
                       }
                     : {
                         height: `${ROW_HEIGHT}px`,
