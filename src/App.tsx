@@ -6,7 +6,9 @@ interface Protocol
   name: string,
   fields: {
     name: string,
-    size: number, // In bytes
+    size?: number, // In bytes
+    minSize?: number, // In bytes
+    maxSize?: number, // In bytes
   }[],
   options?: {
     showInGrid?: boolean,
@@ -28,8 +30,8 @@ class App extends React.Component
         { name: "Destination MAC Address", size: 6, },
         { name: "Source MAC Address", size: 6, },
         { name: "EtherType", size: 2, },
-        { name: "Data", size: 7, },
-        { name: "Frame Check Sequence", size: 7, },
+        { name: "Data", minSize: 46, maxSize: 1500, },
+        { name: "Frame Check Sequence", size: 4, },
       ],
     },
     {
