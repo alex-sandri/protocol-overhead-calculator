@@ -103,7 +103,13 @@ class App extends React.Component
             {
               this.state.protocol.fields?.map((field, index) =>
                 field === PROTOCOL_EOL ? <br key={`EOL-${index}`}></br> :
-                <div key={field.name} className="ProtocolField" style={this.state.protocol.options?.showInGrid ? { width: `${field.size * 100 / 4}%` } : {}}>
+                <div key={field.name} className="ProtocolField" style={
+                  this.state.protocol.options?.showInGrid
+                    ? {
+                        width: `${field.size * 100 / 4}%`,
+                        maxWidth: "100%",
+                      }
+                    : {}}>
                   <p className="ProtocolFieldName">{field.name}</p>
                   <p className="ProtocolFieldSize">{field.size}</p>
                 </div>
