@@ -148,8 +148,12 @@ class App extends React.Component
                           height: `${ROW_HEIGHT}px`,
                         }
                   }>
-                    <p className="ProtocolFieldName">{field.name}</p>
-                    <p className="ProtocolFieldSize">
+                    <p className="ProtocolFieldName" title={field.name}>{field.name}</p>
+                    <p className="ProtocolFieldSize" title={
+                      field.size != null
+                        ? `${field.size * 8} Bit (${field.size} Byte)`
+                        : `${(field.minSize as number) * 8} Bit (${field.minSize} Byte) - ${(field.size ?? field.maxSize as number) * 8} Bit (${field.maxSize} Byte)`
+                    }>
                       {
                         field.size != null
                           ? `${field.size * 8} Bit (${field.size} Byte)`
