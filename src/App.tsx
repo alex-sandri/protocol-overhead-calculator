@@ -96,11 +96,17 @@ class App extends React.Component
       ],
       options: { showInGrid: true, },
     },
-    /*
     {
       name: "UDP",
+      fields: [
+        { name: "Source Port", size: 2, },
+        { name: "Destination Port", size: 2, },
+        PROTOCOL_EOL,
+        { name: "Length", size: 2, },
+        { name: "Checksum", size: 2, },
+      ],
+      options: { showInGrid: true, },
     },
-    */
   ]
 
   state = {
