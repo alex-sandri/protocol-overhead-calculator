@@ -136,7 +136,7 @@ class App extends React.Component
             <h2>Header</h2>
             <div className="ProtocolFields" style={{ width: this.state.protocol.options?.showInGrid ? "100%" : "max-content", }}>
               {
-                this.state.protocol.fields?.map((field, index) =>
+                this.state.protocol.fields.map((field, index) =>
                   field === PROTOCOL_EOL ? <br key={`EOL-${index}`}></br> :
                   <div key={field.name} className="ProtocolField" style={
                     this.state.protocol.options?.showInGrid
