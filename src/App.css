@@ -33,6 +33,11 @@
   outline: none;
 }
 
+.ProtocolFields
+{
+  border: 2px solid white;
+}
+
 .ProtocolField
 {
   border: 2px solid white;
