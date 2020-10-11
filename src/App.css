@@ -25,12 +25,16 @@
   transition: 300ms;
 }
 
-.ProtocolsListView .ProtocolListTile:focus,
-.ProtocolsListView .ProtocolListTile:hover,
 .ProtocolsListView .ProtocolListTile.selected
 {
   color: white;
   background-color: #282c34;
+}
+
+.ProtocolsListView .ProtocolListTile:focus,
+.ProtocolsListView .ProtocolListTile:hover
+{
+  opacity: 0.5;
   outline: none;
 }
 
