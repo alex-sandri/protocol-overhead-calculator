@@ -134,6 +134,9 @@ class App extends React.Component
           <div className="Protocol">
             <h1 className="ProtocolTitle">{this.state.protocol.name}</h1>
             <h2>Header</h2>
+            <p>Size: <strong>
+              {this.state.protocol.fields.reduce((total, current) => total + ((current.size ?? current.minSize) ?? 0), 0)} Byte
+            </strong></p>
             <div className="ProtocolFields" style={{ width: this.state.protocol.options?.showInGrid ? "100%" : "max-content", }}>
               {
                 this.state.protocol.fields.map((field, index) =>
