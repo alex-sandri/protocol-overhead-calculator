@@ -135,7 +135,7 @@ class App extends React.Component
                 <div key={field.name} className="ProtocolField" style={
                   this.state.protocol.options?.showInGrid
                     ? {
-                        width: `${(field.size as number) * 100 / 4}%`,
+                        width: `${(field.size ?? field.maxSize as number) * 100 / 4}%`,
                         maxWidth: "100%",
                         height: `${ROW_HEIGHT * Math.max(1, Math.trunc((field.size as number) / 4))}px`,
                       }
@@ -148,7 +148,7 @@ class App extends React.Component
                     {
                       field.size != null
                         ? `${field.size * 8} Bit (${field.size} Byte)`
-                        : `${(field.minSize as number) * 8} Bit (${field.minSize} Byte) - ${(field.maxSize as number) * 8} Bit (${field.maxSize} Byte)`
+                        : `${(field.minSize as number) * 8} Bit (${field.minSize} Byte) - ${(field.size ?? field.maxSize as number) * 8} Bit (${field.maxSize} Byte)`
                     }
                   </p>
                 </div>
