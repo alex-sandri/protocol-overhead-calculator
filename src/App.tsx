@@ -129,7 +129,7 @@ class App extends React.Component
         {this.state.protocol.name != null && (
           <div className="Protocol">
             <h1 className="ProtocolTitle">{this.state.protocol.name}</h1>
-            <div className="ProtocolFields">
+            <div className="ProtocolFields" style={{ width: this.state.protocol.options?.showInGrid ? "100%" : "max-content", }}>
               {
                 this.state.protocol.fields?.map((field, index) =>
                   field === PROTOCOL_EOL ? <br key={`EOL-${index}`}></br> :
