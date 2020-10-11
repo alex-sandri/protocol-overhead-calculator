@@ -49,22 +49,22 @@
   display: inline-block;
 }
 
-.ProtocolField .ProtocolFieldName
+.ProtocolFieldName,
+.ProtocolFieldSize
 {
   display: grid;
   place-items: center;
   margin: 0;
-  background-color: seagreen;
   padding: 5px;
   height: 50%;
 }
 
-.ProtocolField .ProtocolFieldSize
+.ProtocolFieldName
 {
-  display: grid;
-  place-items: center;
-  margin: 0;
+  background-color: seagreen;
+}
+
+.ProtocolFieldSize
+{
   background-color: steelblue;
-  padding: 5px;
-  height: 50%;
 }
