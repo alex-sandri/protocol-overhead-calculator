@@ -126,36 +126,38 @@ class App extends React.Component
             )
           }
         </ul>
-        <div className="Protocol">
-          <h1 className="ProtocolTitle">{this.state.protocol.name}</h1>
-          <div className="ProtocolFields">
-            {
-              this.state.protocol.fields?.map((field, index) =>
-                field === PROTOCOL_EOL ? <br key={`EOL-${index}`}></br> :
-                <div key={field.name} className="ProtocolField" style={
-                  this.state.protocol.options?.showInGrid
-                    ? {
-                        width: `${(field.size ?? field.maxSize as number) * 100 / 4}%`,
-                        maxWidth: "100%",
-                        height: `${ROW_HEIGHT * Math.max(1, Math.trunc((field.size as number) / 4))}px`,
+        {this.state.protocol.name != null && (
+          <div className="Protocol">
+            <h1 className="ProtocolTitle">{this.state.protocol.name}</h1>
+            <div className="ProtocolFields">
+              {
+                this.state.protocol.fields?.map((field, index) =>
+                  field === PROTOCOL_EOL ? <br key={`EOL-${index}`}></br> :
+                  <div key={field.name} className="ProtocolField" style={
+                    this.state.protocol.options?.showInGrid
+                      ? {
+                          width: `${(field.size ?? field.maxSize as number) * 100 / 4}%`,
+                          maxWidth: "100%",
+                          height: `${ROW_HEIGHT * Math.max(1, Math.trunc((field.size as number) / 4))}px`,
+                        }
+                      : {
+                          height: `${ROW_HEIGHT}px`,
+                        }
+                  }>
+                    <p className="ProtocolFieldName">{field.name}</p>
+                    <p className="ProtocolFieldSize">
+                      {
+                        field.size != null
+                          ? `${field.size * 8} Bit (${field.size} Byte)`
+                          : `${(field.minSize as number) * 8} Bit (${field.minSize} Byte) - ${(field.size ?? field.maxSize as number) * 8} Bit (${field.maxSize} Byte)`
                       }
-                    : {
-                        height: `${ROW_HEIGHT}px`,
-                      }
-                }>
-                  <p className="ProtocolFieldName">{field.name}</p>
-                  <p className="ProtocolFieldSize">
-                    {
-                      field.size != null
-                        ? `${field.size * 8} Bit (${field.size} Byte)`
-                        : `${(field.minSize as number) * 8} Bit (${field.minSize} Byte) - ${(field.size ?? field.maxSize as number) * 8} Bit (${field.maxSize} Byte)`
-                    }
-                  </p>
-                </div>
-              )
-            }
+                    </p>
+                  </div>
+                )
+              }
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }
