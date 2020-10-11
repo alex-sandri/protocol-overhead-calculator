@@ -74,10 +74,29 @@ class App extends React.Component
       ],
       options: { showInGrid: true, },
     },
-    /*
     {
       name: "TCP",
+      fields: [
+        { name: "Source Port", size: 2, },
+        { name: "Destination Port", size: 2, },
+        PROTOCOL_EOL,
+        { name: "Sequence number", size: 4, },
+        PROTOCOL_EOL,
+        { name: "Acknowledgment number", size: 4, },
+        PROTOCOL_EOL,
+        { name: "Header length", size: 0.5, },
+        { name: "Reserved", size: 0.75, },
+        { name: "Control bits", size: 0.75, },
+        { name: "Window size", size: 2, },
+        PROTOCOL_EOL,
+        { name: "Checksum", size: 2, },
+        { name: "Urgent", size: 2, },
+        PROTOCOL_EOL,
+        { name: "Options", minSize: 0, maxSize: 4, },
+      ],
+      options: { showInGrid: true, },
     },
+    /*
     {
       name: "UDP",
     },
