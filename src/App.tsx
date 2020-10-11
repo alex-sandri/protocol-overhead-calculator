@@ -120,11 +120,15 @@ class App extends React.Component
           <h1>Protocol Overhead Calculator</h1>
         </header>
         <ul className="ProtocolsListView">
-          {
-            this.protocols.map((protocol) =>
-              <button key={protocol.name} onClick={() => this.setState({ protocol })} className="ProtocolListTile">{protocol.name}</button>
-            )
-          }
+          {this.protocols.map((protocol) =>
+            <button
+              key={protocol.name}
+              onClick={() => this.setState({ protocol })}
+              className={`ProtocolListTile${protocol === this.state.protocol ? " selected" : ""}`}
+            >
+              {protocol.name}
+            </button>
+          )}
         </ul>
         {this.state.protocol.name != null && (
           <div className="Protocol">

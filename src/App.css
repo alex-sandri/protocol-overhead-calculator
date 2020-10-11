@@ -26,7 +26,8 @@
 }
 
 .ProtocolsListView .ProtocolListTile:focus,
-.ProtocolsListView .ProtocolListTile:hover
+.ProtocolsListView .ProtocolListTile:hover,
+.ProtocolsListView .ProtocolListTile.selected
 {
   color: white;
   background-color: #282c34;
